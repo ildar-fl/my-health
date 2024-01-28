@@ -12,23 +12,23 @@
     "@types/react-dom": "^18.2.18",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-scripts": "5.0.1",
     "styled-components": "^6.1.8",
+    "styled-system": "^5.1.5",
     "typescript": "^4.9.5"
   },
   "alias": {
     "layouts": "./src/layouts/index.ts",
-    "layouts/*": "./src/layouts/$1"
+    "layouts/*": "./src/layouts/$1",
+    "ui": "./ui/index.ts",
+    "ui/*": "./ui/$1",
+    "tools": "./tools/index.ts",
+    "tools/*": "./tools/$1",
+    "routing": "./src/routing/index.ts",
+    "routing/*": "./src/routing/$1"
   },
   "scripts": {
     "dev": "parcel src/index.html",
     "build": "parcel build src/index.html"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
   },
   "browserslist": {
     "production": [
@@ -43,8 +43,8 @@
     ]
   },
   "devDependencies": {
+    "@types/styled-system": "^5.1.22",
     "parcel": "^2.11.0",
-    "prettier": "^3.2.4",
-    "process": "^0.11.10"
+    "prettier": "^3.2.4"
   }
 }

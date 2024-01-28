@@ -4,6 +4,12 @@
     "paths": {
       "layouts": ["./src/layouts/index.ts"],
       "layouts/*": ["./src/layouts/*"],
+      "ui": ["./ui/index.ts"],
+      "ui/*": ["./ui/*"],
+      "tools": ["./tools/index.ts"],
+      "tools/*": ["./tools/*"],
+      "routing": ["./src/routing/index.ts"],
+      "routing/*": ["./src/routing/*"]
     },
     "target": "es5",
     "lib": [
