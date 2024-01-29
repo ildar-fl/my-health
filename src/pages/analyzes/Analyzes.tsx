@@ -1,10 +1,10 @@
-import { FC, useState } from 'react';
+import { FC } from 'react';
 import { Button, Panel, Container } from 'ui';
+import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 import styled from 'styled-components';
 
 import { AnalyzeCard } from './components';
 // import backendData from './data.json';
-import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 import { fetchAnalyzes, postAnalyzes } from '../../../api/analyzes';
 
 const ControlWrapper = styled.div`
@@ -30,8 +30,6 @@ const Analyzes: FC = () => {
       queryClient.invalidateQueries({ queryKey: ['analyzes'] });
     },
   });
-
-  console.log(isRefetching);
 
   const handleAddAnalyze = () => {
     // setAnalyzes(prev => [

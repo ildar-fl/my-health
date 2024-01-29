@@ -1,6 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
 
-import { UserLayout } from 'layouts';
+import { GuestLayout, UserLayout } from 'layouts';
 import { ROUTS } from 'routing/constants';
 
 import { Analyzes } from './pages/analyzes';
@@ -27,7 +27,7 @@ function App() {
 
   return (
     <Routes>
-      <Route path='/' element={<UserLayout />}>
+      <Route path='/' element={<GuestLayout />}>
         <Route path={ROUTS.LOGIN} element={<Login />} />
         <Route path={ROUTS.REGISTRATION} element={<Registration />} />
         <Route path='*' element={<NotFoundPage />} />

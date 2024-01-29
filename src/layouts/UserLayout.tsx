@@ -6,30 +6,7 @@ import { space, SpaceProps } from 'styled-system';
 import { Img } from 'ui';
 import { Link } from 'tools';
 import { ROUTS } from 'routing/constants';
-import { Logo } from './components';
-
-const LayoutContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  min-width: 700px;
-  background: #cccaca;
-`;
-
-const WrapperChildren = styled.main`
-  display: flex;
-  flex-direction: column;
-  padding: 20px 40px;
-`;
-
-const Header = styled.header`
-  display: flex;
-  align-items: center;
-  height: 80px;
-  width: 100%;
-  padding: 8px;
-  background: #b27fff;
-`;
+import { Logo, LayoutContainer, WrapperChildren, Header } from './components';
 
 const TitleNav = styled.nav<SpaceProps>`
   display: flex;
