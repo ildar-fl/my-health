@@ -1,11 +1,13 @@
-import React from 'react';
+import { Route, Routes } from 'react-router-dom';
+
 import { UserLayout } from 'layouts';
-import { Analyzes } from './pages/analyzes';
-import { Route, Routes, useRoutes } from 'react-router-dom';
 import { ROUTS } from 'routing/constants';
+
+import { Analyzes } from './pages/analyzes';
 import { Login } from './pages/login';
 import { MedCards } from './pages/med-cards';
 import { Registration } from './pages/registration';
+import { NotFoundPage } from './pages/errors';
 
 const IS_AUTH = true;
 
@@ -17,6 +19,7 @@ function App() {
           <Route index element={<Analyzes />} />
           <Route path={ROUTS.ANALYZES} element={<Analyzes />} />
           <Route path={ROUTS.MED_CARDS} element={<MedCards />} />
+          <Route path='*' element={<NotFoundPage />} />
         </Route>
       </Routes>
     );
@@ -27,6 +30,7 @@ function App() {
       <Route path='/' element={<UserLayout />}>
         <Route path={ROUTS.LOGIN} element={<Login />} />
         <Route path={ROUTS.REGISTRATION} element={<Registration />} />
+        <Route path='*' element={<NotFoundPage />} />
       </Route>
     </Routes>
   );

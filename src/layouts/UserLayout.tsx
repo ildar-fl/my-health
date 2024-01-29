@@ -1,12 +1,12 @@
-import React, { FC, ReactNode } from 'react';
+import { FC } from 'react';
 import styled from 'styled-components';
-import { space, SpaceProps } from 'styled-system';
+import { Outlet } from 'react-router-dom';
 
+import { space, SpaceProps } from 'styled-system';
 import { Img } from 'ui';
 import { Link } from 'tools';
 import { ROUTS } from 'routing/constants';
 import { Logo } from './components';
-import { Outlet } from 'react-router-dom';
 
 const LayoutContainer = styled.div`
   display: flex;
@@ -45,10 +45,6 @@ const ProfileContainer = styled.div`
   align-items: center;
   margin-left: auto;
 `;
-
-interface IUserLayoutProps {
-  children: ReactNode;
-}
 
 const UserLayout: FC = () => {
   return (
