@@ -48,7 +48,6 @@
   "devDependencies": {
     "@types/styled-system": "^5.1.22",
     "parcel": "^2.11.0",
-    "prettier": "^3.2.4",
-    "process": "^0.11.10"
+    "prettier": "^3.2.4"
   }
 }
