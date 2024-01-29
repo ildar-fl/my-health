@@ -1,13 +1,10 @@
-import { FC } from 'react';
+import { FC, ReactNode } from 'react';
 import styled from 'styled-components';
-import { Outlet } from 'react-router-dom';
 
 import { space, SpaceProps } from 'styled-system';
 import { Img } from 'ui';
-import { Link } from 'tools/navigate';
 import { ROUTS } from 'routing/constants';
 import { Logo, LayoutContainer, WrapperChildren, Header } from './components';
-import { useAppSelector } from 'store/hooks';
 
 const TitleNav = styled.nav<SpaceProps>`
   display: flex;
@@ -16,7 +13,7 @@ const TitleNav = styled.nav<SpaceProps>`
   ${space}
 `;
 
-const TitleNavItem = styled(Link)``;
+const TitleNavItem = styled.a``;
 
 const ProfileContainer = styled.div`
   display: flex;
@@ -24,25 +21,25 @@ const ProfileContainer = styled.div`
   margin-left: auto;
 `;
 
-const UserLayout: FC = () => {
-  const user = useAppSelector(store => store.user);
+interface IUserLayoutProps {
+  children: ReactNode;
+}
 
+const UserLayout: FC<IUserLayoutProps> = ({ children }) => {
   return (
     <LayoutContainer>
       <Header>
         <Logo />
         <TitleNav ml='20px'>
-          <TitleNavItem to={ROUTS.MED_CARDS}>мед карта</TitleNavItem>
-          <TitleNavItem to={ROUTS.ANALYZES}>анализы</TitleNavItem>
+          <TitleNavItem href={ROUTS.MED_CARDS}>мед карта</TitleNavItem>
+          <TitleNavItem href={ROUTS.ANALYZES}>анализы</TitleNavItem>
         </TitleNav>
         <ProfileContainer>
-          {user!.firstName} {user!.secondName}
+          User001
           <Img rounded ml='8px' />
         </ProfileContainer>
       </Header>
-      <WrapperChildren>
-        <Outlet />
-      </WrapperChildren>
+      <WrapperChildren>{children}</WrapperChildren>
     </LayoutContainer>
   );
 };
