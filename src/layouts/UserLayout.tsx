@@ -4,7 +4,7 @@ import { Outlet } from 'react-router-dom';
 
 import { space, SpaceProps } from 'styled-system';
 import { Img } from 'ui';
-import { Link } from 'tools';
+import { Link } from 'tools/navigate';
 import { ROUTS } from 'routing/constants';
 import { Logo, LayoutContainer, WrapperChildren, Header } from './components';
 

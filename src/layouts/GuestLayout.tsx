@@ -4,7 +4,7 @@ import { Outlet } from 'react-router-dom';
 
 import { Img } from 'ui';
 import { Logo, LayoutContainer, Header, WrapperChildren } from './components';
-import { Link } from 'tools';
+import { Link } from 'tools/navigate';
 import { ROUTS } from 'routing/constants';
 
 const ProfileContainer = styled.div`

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 import { ROUTS } from 'routing/constants';
-import { Link } from 'tools';
+import { Link } from 'tools/navigate';
 
 const TitleLogo = styled(Link)`
   font-size: 35px;

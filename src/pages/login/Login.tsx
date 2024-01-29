@@ -1,8 +1,10 @@
 import { FC } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
 
-import { Button, Panel, Form } from 'ui';
+import { Button, Panel, Form, Container } from 'ui';
 import { TextInput } from 'tools/form';
+import { useNavigate } from 'tools/navigate';
+import { ROUTS } from 'routing/constants';
 
 interface ILoginForm {
   login: string;
@@ -12,8 +14,14 @@ interface ILoginForm {
 const Login: FC = () => {
   const { register, handleSubmit } = useForm<ILoginForm>();
 
+  const { push } = useNavigate();
+
   const onSubmit: SubmitHandler<ILoginForm> = values => {
     console.log(values);
+  };
+
+  const onRegistration = () => {
+    push(ROUTS.REGISTRATION);
   };
 
   return (
@@ -31,7 +39,10 @@ const Login: FC = () => {
           type='password'
           register={register}
         />
-        <Button type='submit' label='Войти' />
+        <Container justifyContent='space-between'>
+          <Button type='submit' label='Войти' />
+          <Button label='Регистрация' onClick={onRegistration} />
+        </Container>
       </Form>
     </Panel>
   );
