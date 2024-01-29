@@ -3,8 +3,6 @@ import { SubmitHandler, useForm } from 'react-hook-form';
 
 import { Button, Panel, Form, Container } from 'ui';
 import { TextInput } from 'tools/form';
-import { useNavigate } from 'tools/navigate';
-import { ROUTS } from 'routing/constants';
 
 interface ILoginForm {
   email: string;
@@ -14,15 +12,11 @@ interface ILoginForm {
 const Login: FC = () => {
   const { register, handleSubmit } = useForm<ILoginForm>();
 
-  const { push } = useNavigate();
-
   const onSubmit: SubmitHandler<ILoginForm> = values => {
     console.log(values);
   };
 
-  const onRegistration = () => {
-    push(ROUTS.REGISTRATION);
-  };
+  const onRegistration = () => {};
 
   return (
     <Panel width='400px' alignSelf='center'>
