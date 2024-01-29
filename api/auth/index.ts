@@ -1,0 +1,1 @@
+export { postRegistrationUser } from './registration';

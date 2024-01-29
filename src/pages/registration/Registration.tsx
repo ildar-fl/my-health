@@ -5,6 +5,7 @@ import { Button, Panel, Form, Container } from 'ui';
 import { TextInput } from 'tools/form';
 import { useNavigate } from 'tools/navigate';
 import { ROUTS } from 'routing/constants';
+import { postRegistrationUser } from '../../../api/auth';
 
 interface IRegistrationForm {
   firstName: string;
@@ -19,8 +20,14 @@ const Registration: FC = () => {
 
   const { push } = useNavigate();
 
-  const onSubmit: SubmitHandler<IRegistrationForm> = values => {
+  const onSubmit: SubmitHandler<IRegistrationForm> = async values => {
     console.log(values);
+
+    try {
+      await postRegistrationUser(values);
+    } catch (e) {
+      console.error('Error registration: ', e);
+    }
   };
 
   const onLogin = () => {
@@ -50,6 +57,12 @@ const Registration: FC = () => {
         <TextInput
           id='password'
           label='Введите пароль'
+          type='password'
+          register={register}
+        />
+        <TextInput
+          id='repeatPassword'
+          label='Повторите пароль'
           type='password'
           register={register}
         />
