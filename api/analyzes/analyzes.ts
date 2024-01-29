@@ -1,10 +1,10 @@
-import { request } from '../request';
-import { IAnalyze } from './type';
+// import { request } from '../request';
+// import { IAnalyze } from './type';
 
 export const fetchAnalyzes = () => {
-  return request.get<IAnalyze[]>('/analyzes').then(result => result ?? []);
+  return null;
 };
 
 export const postAnalyzes = (data: any) => {
-  return request.post('/analyzes', data);
+  return null;
 };

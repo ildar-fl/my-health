@@ -3,27 +3,6 @@ interface IRequest {
   get: <T>(url: string) => Promise<T>;
 }
 
-const request: IRequest = {
-  post: async (url, data) => {
-    return new Promise(resolve => {
-      setTimeout(() => {
-        window.localStorage.setItem(url, JSON.stringify(data));
-
-        resolve();
-      }, 400);
-    });
-  },
-  get: async url => {
-    const data = window.localStorage.getItem(url);
-
-    const result = typeof data === 'string' ? JSON.parse(data) : null;
-
-    return new Promise(resolve => {
-      setTimeout(() => {
-        resolve(result as any);
-      }, 1000);
-    });
-  },
-};
+const request: IRequest = {} as any;
 
 export { request };
