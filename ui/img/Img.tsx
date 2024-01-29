@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components';
 import { space, SpaceProps } from 'styled-system';
 import { FC } from 'react';
 
-import userImage from './user.png';
+import userImage from 'static/user.png';
 
 interface IImgStyleProps {
   $rounded?: boolean;
@@ -13,7 +13,7 @@ const ImgStyle = styled.img<IImgStyleProps & SpaceProps>(
     display: flex;
     width: 40px;
     height: 40px;
-    border: gray 1px solid;
+    border: #252323 3px solid;
 
     ${$rounded &&
     css`

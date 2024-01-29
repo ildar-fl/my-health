@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@tanstack/react-query": "^5.17.19",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
@@ -12,6 +13,7 @@
     "@types/react-dom": "^18.2.18",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-router-dom": "^6.21.3",
     "styled-components": "^6.1.8",
     "styled-system": "^5.1.5",
     "typescript": "^4.9.5"
@@ -24,7 +26,8 @@
     "tools": "./tools/index.ts",
     "tools/*": "./tools/$1",
     "routing": "./src/routing/index.ts",
-    "routing/*": "./src/routing/$1"
+    "routing/*": "./src/routing/$1",
+    "static/*": "./public/$1"
   },
   "scripts": {
     "dev": "parcel src/index.html",
@@ -45,6 +48,7 @@
   "devDependencies": {
     "@types/styled-system": "^5.1.22",
     "parcel": "^2.11.0",
-    "prettier": "^3.2.4"
+    "prettier": "^3.2.4",
+    "process": "^0.11.10"
   }
 }

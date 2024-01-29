@@ -1,4 +1,4 @@
-import { FC, ReactNode } from 'react';
+import React, { FC, ReactNode } from 'react';
 import styled from 'styled-components';
 import { space, SpaceProps } from 'styled-system';
 
@@ -6,12 +6,20 @@ import { Img } from 'ui';
 import { Link } from 'tools';
 import { ROUTS } from 'routing/constants';
 import { Logo } from './components';
+import { Outlet } from 'react-router-dom';
 
 const LayoutContainer = styled.div`
   display: flex;
   flex-direction: column;
-  height: 100vh;
-  background: gray;
+  min-height: 100vh;
+  min-width: 700px;
+  background: #cccaca;
+`;
+
+const WrapperChildren = styled.main`
+  display: flex;
+  flex-direction: column;
+  padding: 20px 40px;
 `;
 
 const Header = styled.header`
@@ -25,7 +33,7 @@ const Header = styled.header`
 
 const TitleNav = styled.nav<SpaceProps>`
   display: flex;
-  gap: 8px;
+  gap: 30px;
 
   ${space}
 `;
@@ -42,7 +50,7 @@ interface IUserLayoutProps {
   children: ReactNode;
 }
 
-const UserLayout: FC<IUserLayoutProps> = ({ children }) => {
+const UserLayout: FC = () => {
   return (
     <LayoutContainer>
       <Header>
@@ -56,7 +64,9 @@ const UserLayout: FC<IUserLayoutProps> = ({ children }) => {
           <Img rounded ml='8px' />
         </ProfileContainer>
       </Header>
-      {children}
+      <WrapperChildren>
+        <Outlet />
+      </WrapperChildren>
     </LayoutContainer>
   );
 };
