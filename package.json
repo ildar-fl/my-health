@@ -3,10 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@reduxjs/toolkit": "^2.1.0",
     "@tanstack/react-query": "^5.17.19",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.49.3",
+    "react-redux": "^9.1.0",
     "react-router-dom": "^6.21.3",
     "styled-components": "^6.1.8",
     "styled-system": "^5.1.5"
@@ -20,7 +22,9 @@
     "tools/*": "./tools/$1",
     "routing": "./src/routing/index.ts",
     "routing/*": "./src/routing/$1",
-    "static/*": "./public/$1"
+    "static/*": "./public/$1",
+    "core/*": "./src/core/$1",
+    "store/*": "./src/store/$1"
   },
   "scripts": {
     "dev": "parcel src/index.html",

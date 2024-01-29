@@ -8,11 +8,14 @@ import { Login } from './pages/login';
 import { MedCards } from './pages/med-cards';
 import { Registration } from './pages/registration';
 import { NotFoundPage } from './pages/errors';
+import { useAppSelector } from 'store/hooks';
 
-const IS_AUTH = false;
+// const IS_AUTH = false;
 
 function App() {
-  if (IS_AUTH) {
+  const user = useAppSelector(store => store.user);
+
+  if (!!user) {
     return (
       <Routes>
         <Route path='/' element={<UserLayout />}>

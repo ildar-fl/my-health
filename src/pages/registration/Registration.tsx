@@ -5,7 +5,9 @@ import { Button, Panel, Form, Container } from 'ui';
 import { TextInput } from 'tools/form';
 import { useNavigate } from 'tools/navigate';
 import { ROUTS } from 'routing/constants';
+import { useAppDispatch } from 'store/hooks';
 import { postRegistrationUser } from '../../../api/auth';
+import { userActions } from 'core/user/reducer';
 
 interface IRegistrationForm {
   firstName: string;
@@ -19,6 +21,7 @@ const Registration: FC = () => {
   const { register, handleSubmit } = useForm<IRegistrationForm>();
 
   const { push } = useNavigate();
+  const dispatch = useAppDispatch();
 
   const onSubmit: SubmitHandler<IRegistrationForm> = async values => {
     console.log(values);
@@ -27,7 +30,20 @@ const Registration: FC = () => {
       await postRegistrationUser(values);
     } catch (e) {
       console.error('Error registration: ', e);
+      return;
     }
+
+    const user = {
+      email: values.email,
+      firstName: values.firstName,
+      secondName: values.secondName,
+    };
+
+    dispatch(userActions.setUser(user));
+
+    window.localStorage.setItem('user', JSON.stringify(user));
+
+    push(ROUTS.HOME);
   };
 
   const onLogin = () => {

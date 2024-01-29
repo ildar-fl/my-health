@@ -7,6 +7,7 @@ import { Img } from 'ui';
 import { Link } from 'tools/navigate';
 import { ROUTS } from 'routing/constants';
 import { Logo, LayoutContainer, WrapperChildren, Header } from './components';
+import { useAppSelector } from 'store/hooks';
 
 const TitleNav = styled.nav<SpaceProps>`
   display: flex;
@@ -24,6 +25,8 @@ const ProfileContainer = styled.div`
 `;
 
 const UserLayout: FC = () => {
+  const user = useAppSelector(store => store.user);
+
   return (
     <LayoutContainer>
       <Header>
@@ -33,7 +36,7 @@ const UserLayout: FC = () => {
           <TitleNavItem to={ROUTS.ANALYZES}>анализы</TitleNavItem>
         </TitleNav>
         <ProfileContainer>
-          Ильдар Фасхетдинов
+          {user!.firstName} {user!.secondName}
           <Img rounded ml='8px' />
         </ProfileContainer>
       </Header>
