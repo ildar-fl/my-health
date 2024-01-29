@@ -1,8 +1,8 @@
 import { FC } from 'react';
-import { Button, Panel } from 'ui';
 import styled from 'styled-components';
 
 import { AnalyzeCard } from './components';
+import { Button, Panel } from 'ui';
 import backendData from './data.json';
 
 const ControlWrapper = styled.div`

@@ -1,8 +1,7 @@
 import styled from 'styled-components';
-import { Link as ReactRouterLink } from 'react-router-dom';
 import { FC, ReactNode } from 'react';
 
-const StyledLink = styled(ReactRouterLink)`
+const StyledLink = styled.a`
   text-decoration: none;
 `;
 
@@ -14,7 +13,7 @@ interface ILinkProps {
 
 const Link: FC<ILinkProps> = ({ className, to, children }) => {
   return (
-    <StyledLink className={className} to={to}>
+    <StyledLink className={className} href={to}>
       {children}
     </StyledLink>
   );
