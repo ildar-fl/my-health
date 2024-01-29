@@ -1,3 +1,5 @@
 export { Img } from './img';
-export * from './blocks';
 export { Button } from './buttons';
+export { Form } from './form';
+export * from './blocks';
+export * from './labels';

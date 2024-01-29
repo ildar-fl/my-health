@@ -40,6 +40,7 @@
     "src",
     "ui",
     "api",
+    "tools",
     "@types"
   ],
 }

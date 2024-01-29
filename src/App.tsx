@@ -9,7 +9,7 @@ import { MedCards } from './pages/med-cards';
 import { Registration } from './pages/registration';
 import { NotFoundPage } from './pages/errors';
 
-const IS_AUTH = true;
+const IS_AUTH = false;
 
 function App() {
   if (IS_AUTH) {

@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { ButtonHTMLAttributes, FC } from 'react';
 import styled from 'styled-components';
 
 interface IStyledButton {
@@ -10,6 +10,7 @@ const StyledButton = styled.button<IStyledButton>`
   align-items: center;
   justify-content: center;
   height: 30px;
+  width: fit-content;
   font-size: 10px;
   font-family: inherit;
   cursor: pointer;
@@ -17,13 +18,14 @@ const StyledButton = styled.button<IStyledButton>`
 
 interface IButtonProps {
   label: string;
+  type?: ButtonHTMLAttributes<HTMLButtonElement>['type'];
   disabled?: boolean;
-  onClick: VoidFunction;
+  onClick?: VoidFunction;
 }
 
-const Button: FC<IButtonProps> = ({ label, disabled, onClick }) => {
+const Button: FC<IButtonProps> = ({ label, type, disabled, onClick }) => {
   return (
-    <StyledButton disabled={disabled} onClick={onClick}>
+    <StyledButton type={type} disabled={disabled} onClick={onClick}>
       {label}
     </StyledButton>
   );
