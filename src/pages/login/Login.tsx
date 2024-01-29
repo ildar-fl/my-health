@@ -7,7 +7,7 @@ import { useNavigate } from 'tools/navigate';
 import { ROUTS } from 'routing/constants';
 
 interface ILoginForm {
-  login: string;
+  email: string;
   password: string;
 }
 
@@ -32,7 +32,12 @@ const Login: FC = () => {
         mt='10px'
         $gap={10}
       >
-        <TextInput id='login' label='Введите имя' register={register} />
+        <TextInput
+          id='email'
+          type='email'
+          label='Введите емайл'
+          register={register}
+        />
         <TextInput
           id='password'
           label='Введите пароль'
