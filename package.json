@@ -18,13 +18,9 @@
     "layouts/*": "./src/layouts/$1",
     "ui": "./ui/index.ts",
     "ui/*": "./ui/$1",
-    "tools": "./tools/index.ts",
-    "tools/*": "./tools/$1",
     "routing": "./src/routing/index.ts",
     "routing/*": "./src/routing/$1",
-    "static/*": "./public/$1",
-    "core/*": "./src/core/$1",
-    "store/*": "./src/store/$1"
+    "static/*": "./public/$1"
   },
   "scripts": {
     "dev": "parcel src/index.html",
