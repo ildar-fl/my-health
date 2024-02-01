@@ -4,6 +4,25 @@ body {
     font-size: 12px;
 }
 
+button,
+input,
+optgroup,
+select,
+textarea {
+    line-height: 1.5;
+    font-weight: inherit;
+    font-size: inherit;
+}
+
+a {
+    outline: none;
+}
+
+input {
+    border: 0;
+    font-weight: inherit;
+}
+
 * {
     box-sizing: border-box;
 }

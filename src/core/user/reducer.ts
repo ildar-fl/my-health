@@ -8,8 +8,6 @@ const initialState = localStorageUser
   ? (JSON.parse(localStorageUser) as IUser)
   : null;
 
-console.log(initialState);
-
 const userSlice = createSlice({
   name: 'user',
   initialState,

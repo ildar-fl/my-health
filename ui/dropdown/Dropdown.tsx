@@ -37,6 +37,7 @@ const Dropdown: FC<IDropdownProps & PropsWithChildren> = ({
   const { refs, floatingStyles, context } = useFloating({
     open: isOpen,
     onOpenChange: setOpen,
+    placement: 'bottom',
     middleware: [
       offset(10),
       flip({ fallbackAxisSideDirection: 'end' }),

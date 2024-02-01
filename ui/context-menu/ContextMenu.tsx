@@ -6,9 +6,11 @@ import {
   SetStateAction,
 } from 'react';
 import styled from 'styled-components';
-import { Dropdown } from 'ui';
+import { Dropdown } from '../dropdown';
 
-const ContextMenuContainer = styled(Dropdown)``;
+const ContextMenuContainer = styled(Dropdown)`
+  width: 140px;
+`;
 
 interface IContextMenuProps {
   className?: string;
@@ -22,9 +24,10 @@ const ContextMenu: FC<IContextMenuProps & PropsWithChildren> = ({
   isOpen,
   anchorEl,
   children,
+  setOpen,
 }) => {
   return (
-    <ContextMenuContainer isOpen={isOpen} anchorEl={anchorEl}>
+    <ContextMenuContainer isOpen={isOpen} anchorEl={anchorEl} setOpen={setOpen}>
       {children}
     </ContextMenuContainer>
   );

@@ -8,6 +8,8 @@ const ItemContainer = styled.button`
   height: 30px;
   background: wheat;
   cursor: pointer;
+  border: none;
+  font-family: inherit;
 
   &:hover {
     background: grey;
