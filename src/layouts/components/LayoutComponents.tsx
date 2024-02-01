@@ -20,7 +20,7 @@ const Header = styled.header`
   height: 80px;
   width: 100%;
   padding: 8px;
-  background: #b27fff;
+  background: #b6e9a2;
 `;
 
 export { LayoutContainer, WrapperChildren, Header };

@@ -7,8 +7,7 @@ import { useNavigate } from 'tools/navigate';
 import { ROUTS } from 'routing/constants';
 
 interface ILoginForm {
-  email: string;
-  password: string;
+  phone: string;
 }
 
 const Login: FC = () => {
@@ -33,20 +32,14 @@ const Login: FC = () => {
         $gap={10}
       >
         <TextInput
-          id='email'
-          type='email'
-          label='Введите емайл'
-          register={register}
-        />
-        <TextInput
-          id='password'
-          label='Введите пароль'
-          type='password'
+          id='phone'
+          type='phone'
+          label='Телефон'
           register={register}
         />
         <Container justifyContent='space-between'>
-          <Button type='submit' label='Войти' />
           <Button label='Регистрация' onClick={onRegistration} />
+          <Button type='submit' label='Войти' />
         </Container>
       </Form>
     </Panel>
