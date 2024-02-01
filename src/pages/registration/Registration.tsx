@@ -6,13 +6,14 @@ import { TextInput } from 'tools/form';
 import { useNavigate } from 'tools/navigate';
 import { ROUTS } from 'routing/constants';
 import { useAppDispatch } from 'store/hooks';
-import { postRegistrationUser } from '../../../api/auth';
 import { userActions } from 'core/user/reducer';
+import { postRegistrationUser } from '../../../api/auth';
 
 interface IRegistrationForm {
   firstName: string;
   secondName: string;
   email: string;
+  phone: string;
   password: string;
   repeatPassword: string;
 }
@@ -34,6 +35,7 @@ const Registration: FC = () => {
     }
 
     const user = {
+      phone: values.phone,
       email: values.email,
       firstName: values.firstName,
       secondName: values.secondName,
@@ -67,6 +69,12 @@ const Registration: FC = () => {
         <TextInput
           id='email'
           type='email'
+          label='Введите емайл'
+          register={register}
+        />
+        <TextInput
+          id='phone'
+          type='phone'
           label='Введите емайл'
           register={register}
         />

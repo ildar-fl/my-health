@@ -10,8 +10,6 @@ import { Registration } from './pages/registration';
 import { NotFoundPage } from './pages/errors';
 import { useAppSelector } from 'store/hooks';
 
-// const IS_AUTH = false;
-
 function App() {
   const user = useAppSelector(store => store.user);
 
