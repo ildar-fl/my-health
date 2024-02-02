@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { Outlet } from 'react-router-dom';
 
 import { space, SpaceProps } from 'styled-system';
-import { ContextMenu, ContextMenuItem, Img } from 'ui';
+import { ContextMenu, ContextMenuItem, Img, Modal } from 'ui';
 import { Link, useNavigate } from 'tools/navigate';
 import { ROUTS } from 'routing/constants';
 import { Logo, LayoutContainer, WrapperChildren, Header } from './components';
@@ -67,6 +67,7 @@ const UserLayout: FC = () => {
       <WrapperChildren>
         <Outlet />
       </WrapperChildren>
+      <Modal />
     </LayoutContainer>
   );
 };

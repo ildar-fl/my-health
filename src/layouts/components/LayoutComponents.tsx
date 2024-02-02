@@ -1,11 +1,17 @@
 import styled from 'styled-components';
 
+import backgroundImage from 'static/background.jpg';
+
 const LayoutContainer = styled.div`
   display: flex;
   flex-direction: column;
   min-height: 100vh;
   min-width: 700px;
   background: #cccaca;
+  background-image: url(${backgroundImage});
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
 `;
 
 const WrapperChildren = styled.main`
@@ -17,10 +23,11 @@ const WrapperChildren = styled.main`
 const Header = styled.header`
   display: flex;
   align-items: center;
-  height: 80px;
+  height: 60px;
   width: 100%;
   padding: 8px;
-  background: #b6e9a2;
+  background: #3c7224;
+  opacity: 80%;
 `;
 
 export { LayoutContainer, WrapperChildren, Header };
